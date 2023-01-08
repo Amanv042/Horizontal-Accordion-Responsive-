@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 50rem;
+    padding: 10px;
+    margin-inline: auto;
+}
+
+.slides {
+    display: flex;
+    padding: 1rem;
+}
+
+.slide {
+    position: relative;
+    margin: 1px;
+    flex: 1;
+    min-height: 300px;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+    overflow: hidden;
+}
+
+.active {
+    border-radius: 1rem;
+    flex: 4;
+    background: blue;
+}
+
+.slide1 {
+    background: url(./images/1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.slide2 {
+    background: url(./images/2.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.slide3 {
+    background: url(./images/3.jpg);
+    background-position: 70%;
+    background-size: cover;
+}
+
+.slide4 {
+    background: url(./images/4.jpg);
+    background-position: 80%;
+    background-size: cover;
+}
+
+.slide5 {
+    background: url(./images/1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.slide .s {
+    position: absolute;
+    height: 50px;
+    aspect-ratio: 1;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(3px);
+    bottom: 1rem;
+    color: white;
+    border-radius: 100vh;
+    display: grid;
+    place-items: center;
+    transform-origin: bottom;
+    transition: transform 250ms linear;
+}
+
+.slide .s {
+    transform: scale(0);
+}
+
+.slide .s p {
+    transform: scale(0);
+}
+
+.active .s {
+    width: 100%;
+    border-radius: 0.25rem;
+    bottom: 0;
+}
+
+.active .s {
+    text-shadow: 5px 3px 4px black;
+    transform: scale(1);
+}
+
+.active .s p {
+    text-shadow: 5px 3px 4px black;
+    transform: scale(1);
+}
+
+
+
+
+@media screen and (width<=768px) {
+    .slides {
+        flex-direction: column;
+    }
+
+    .slide {
+        align-items: center;
+        min-height: 100px;
+    }
+
+    .active {
+        min-height: 300px;
+    }
+}
